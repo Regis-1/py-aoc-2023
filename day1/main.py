@@ -8,7 +8,6 @@ def extract_digits_from_file(file):
 
     return numbers
 
-
 def main():
     if (len(sys.argv) <= 1):
         return
