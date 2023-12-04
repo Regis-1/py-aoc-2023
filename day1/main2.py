@@ -1,5 +1,3 @@
-import sys
-
 def findall(p, s):
     i = s.find(p)
     while (i != -1):
@@ -22,13 +20,8 @@ def extract_digits_from_file(file):
     return digits
 
 
-def main():
-    if (len(sys.argv) <= 1):
-        return
-
-    with open(sys.argv[1], 'r') as my_file:
+def day1_2(filename: str):
+    with open(filename, 'r') as my_file:
         calib_values = extract_digits_from_file(my_file)
 
-    print(f'The result is: {sum(calib_values)}.')
-
-main()
+    print(f'The result of day1_2 is: {sum(calib_values)}.')

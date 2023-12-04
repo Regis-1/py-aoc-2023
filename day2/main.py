@@ -1,5 +1,3 @@
-import sys
-
 def evaluate_game(line: str, num_r: int, num_g: int, num_b: int):
     result = True
     splitted_game = line.split(' ')
@@ -13,16 +11,11 @@ def evaluate_game(line: str, num_r: int, num_g: int, num_b: int):
 
     return (id, result)
 
-def main():
-    if (len(sys.argv) <= 1):
-        return
-
-    with open(sys.argv[1], 'r') as my_file:
+def day2_1(filename: str):
+    with open(filename, 'r') as my_file:
         valid_games = []
         for line in my_file:
             valid_games.append(evaluate_game(line, 12, 13, 14))
 
     valid_indexes = [x[0] for x in valid_games if x[1]]
-    print(sum(valid_indexes))
-
-main()
+    print(f'The result of day2_2 is: {sum(valid_indexes)}.')

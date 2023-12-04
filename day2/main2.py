@@ -1,5 +1,3 @@
-import sys
-
 def evaluate_game(line: str):
     result = True
     splitted_game = line.split(' ')
@@ -15,16 +13,11 @@ def evaluate_game(line: str):
 
     return max_rgb
 
-def main():
-    if (len(sys.argv) <= 1):
-        return
-
-    with open(sys.argv[1], 'r') as my_file:
+def day2_2(filename: str):
+    with open(filename, 'r') as my_file:
         games_balls = []
         for line in my_file:
             games_balls.append(evaluate_game(line))
 
     games_power = [x[0]*x[1]*x[2] for x in games_balls]
-    print(sum(games_power))
-
-main()
+    print(f'The result of day2_1 is: {sum(games_power)}.')
